@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<style>
+	
+		table{
+				width:80%;
+				text-align:center;
+				border-collapse:collapse;
+		
+			 }
+			 
+			 thead{
+			 		background-color:lightgray
+			 	}
+			 	
+		 	tr:nth-child(even) {
+		 		background-color:gray
+		 	}
+	
+	</style>
+
+</head>
+
+<body>
+<h1 th:text = " 'Students Directory' ">student list</h1>
+<hr>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:Each = "tempStudent : ${students}">
+			
+				<td th:text = ${tempStudent.id}></td>
+				<td th:text = "${tempStudent.firstName}"></td>
+				<td th:text = "${tempStudent.lastName}"></td>
+				<td th:text = "${tempStudent.email}"></td>
+			</tr>
+		</tbody>
+	
+	</table>
+
+
+</body>
+
+</html>
